@@ -1,0 +1,373 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" font-family="'SF Pro Display', -apple-system, sans-serif">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <linearGradient id="widgetSmall" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="widgetMedium" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f3460"/>
+      <stop offset="100%" style="stop-color:#533483"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b35"/>
+      <stop offset="100%" style="stop-color:#f7c59f"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6c63ff"/>
+      <stop offset="100%" style="stop-color:#9d4edd"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d2a0"/>
+      <stop offset="100%" style="stop-color:#00b4d8"/>
+    </linearGradient>
+    <linearGradient id="briefGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e2030"/>
+      <stop offset="100%" style="stop-color:#252840"/>
+    </linearGradient>
+
+    <!-- Glow filters -->
+    <filter id="orangeGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="nodeGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="12" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+
+    <!-- Clip paths -->
+    <clipPath id="roundSmall">
+      <rect x="0" y="0" width="140" height="140" rx="22"/>
+    </clipPath>
+    <clipPath id="roundMedium">
+      <rect x="0" y="0" width="300" height="140" rx="22"/>
+    </clipPath>
+    <clipPath id="roundLarge">
+      <rect x="0" y="0" width="300" height="300" rx="22"/>
+    </clipPath>
+  </defs>
+
+  <!-- Main background -->
+  <rect width="1200" height="900" fill="url(#bg)"/>
+
+  <!-- Subtle grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff08" stroke-width="0.5"/>
+  </pattern>
+  <rect width="1200" height="900" fill="url(#grid)"/>
+
+  <!-- ═══════════════════════════════════════ HEADER ═══════════════════════════════════════ -->
+  <text x="600" y="52" text-anchor="middle" fill="#ffffff" font-size="26" font-weight="700" letter-spacing="-0.5">微信读书 × Claude — 功能设计预览</text>
+  <text x="600" y="76" text-anchor="middle" fill="#8b949e" font-size="13">WeRead + Claude iOS Integration · 5 Creative Extensions</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="92" x2="1140" y2="92" stroke="#ffffff15" stroke-width="1"/>
+
+  <!-- ═══════════════════════════════════════ SECTION 1: WIDGETS ═══════════════════════════════════════ -->
+  <text x="60" y="122" fill="#8b949e" font-size="11" letter-spacing="2" font-weight="600">01 · WIDGETKIT</text>
+
+  <!-- Widget Small -->
+  <g transform="translate(60, 134)" filter="url(#cardShadow)">
+    <g clip-path="url(#roundSmall)">
+      <rect width="140" height="140" fill="url(#widgetSmall)"/>
+      <!-- Glow behind number -->
+      <circle cx="70" cy="58" r="35" fill="#f7600020" />
+      <!-- Flame -->
+      <text x="70" y="48" text-anchor="middle" font-size="28">🔥</text>
+      <!-- Big streak number -->
+      <text x="70" y="82" text-anchor="middle" fill="#f97316" font-size="38" font-weight="900" filter="url(#orangeGlow)">7</text>
+      <text x="70" y="98" text-anchor="middle" fill="#ffffff80" font-size="10">连续阅读天</text>
+      <!-- Divider -->
+      <line x1="20" y1="106" x2="120" y2="106" stroke="#ffffff20" stroke-width="0.8"/>
+      <!-- Today minutes -->
+      <text x="70" y="122" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">42</text>
+      <text x="70" y="136" text-anchor="middle" fill="#ffffff60" font-size="9">今日分钟</text>
+    </g>
+    <rect width="140" height="140" rx="22" fill="none" stroke="#ffffff18" stroke-width="1"/>
+  </g>
+  <text x="130" y="284" text-anchor="middle" fill="#6e7681" font-size="11">Small</text>
+
+  <!-- Widget Medium -->
+  <g transform="translate(218, 134)" filter="url(#cardShadow)">
+    <g clip-path="url(#roundMedium)">
+      <rect width="300" height="140" fill="url(#widgetMedium)"/>
+      <!-- Left accent bar -->
+      <rect x="14" y="18" width="4" height="104" rx="2" fill="#eab30880"/>
+      <!-- Quote text -->
+      <text x="30" y="44" fill="#ffffff" font-size="12.5" font-weight="500">
+        <tspan x="30" dy="0">读书是在别人思想的帮助下，</tspan>
+        <tspan x="30" dy="18">建立起自己的思想。</tspan>
+      </text>
+      <!-- Bottom row -->
+      <text x="30" y="110" fill="#eab308cc" font-size="10" font-weight="600">《如何阅读一本书》</text>
+      <!-- Streak badge -->
+      <rect x="230" y="98" width="56" height="20" rx="6" fill="#ffffff15"/>
+      <text x="258" y="112" text-anchor="middle" fill="#ffffff99" font-size="10">🔥 7天</text>
+      <!-- Timestamp -->
+      <text x="30" y="128" fill="#ffffff50" font-size="9">每小时更新 · 点击查看更多</text>
+    </g>
+    <rect width="300" height="140" rx="22" fill="none" stroke="#ffffff18" stroke-width="1"/>
+  </g>
+  <text x="368" y="284" text-anchor="middle" fill="#6e7681" font-size="11">Medium</text>
+
+  <!-- Widget Large -->
+  <g transform="translate(536, 134)" filter="url(#cardShadow)">
+    <g clip-path="url(#roundLarge)">
+      <rect width="300" height="300" fill="#0a0a0a"/>
+      <!-- Header -->
+      <text x="16" y="28" fill="#ffffff" font-size="14" font-weight="700">微信读书</text>
+      <text x="16" y="44" fill="#8b949e" font-size="9">2026年2月18日 星期三</text>
+      <!-- Stats -->
+      <rect x="196" y="14" width="44" height="22" rx="6" fill="#ffffff15"/>
+      <text x="218" y="29" text-anchor="middle" fill="#ffffff" font-size="10">🔥 7天</text>
+      <rect x="244" y="14" width="48" height="22" rx="6" fill="#ffffff15"/>
+      <text x="268" y="29" text-anchor="middle" fill="#ffffff" font-size="10">⏱ 42min</text>
+      <!-- Divider -->
+      <line x1="0" y1="52" x2="300" y2="52" stroke="#ffffff12" stroke-width="1"/>
+      <!-- Section label -->
+      <text x="16" y="70" fill="#8b949e" font-size="9" font-weight="700" letter-spacing="1">近期划线</text>
+      <!-- Highlight rows -->
+      <rect x="16" y="76" width="3" height="34" rx="1.5" fill="#eab308aa"/>
+      <text x="26" y="89" fill="#ffffffee" font-size="10.5">专注力是最稀缺的资源。</text>
+      <text x="26" y="104" fill="#8b949e" font-size="9">《深度工作》</text>
+
+      <rect x="16" y="118" width="3" height="34" rx="1.5" fill="#eab308aa"/>
+      <text x="26" y="131" fill="#ffffffee" font-size="10.5">系统比目标更重要。</text>
+      <text x="26" y="146" fill="#8b949e" font-size="9">《原子习惯》</text>
+
+      <rect x="16" y="160" width="3" height="34" rx="1.5" fill="#eab308aa"/>
+      <text x="26" y="173" fill="#ffffffee" font-size="10.5">复利效应在时间维度上</text>
+      <text x="26" y="187" fill="#8b949e" font-size="9">《穷查理宝典》</text>
+
+      <!-- Divider -->
+      <line x1="0" y1="202" x2="300" y2="202" stroke="#ffffff12" stroke-width="1"/>
+      <!-- Current book -->
+      <text x="16" y="220" fill="#8b949e" font-size="9" font-weight="700" letter-spacing="1">进度最高</text>
+      <text x="16" y="238" fill="#ffffff" font-size="12" font-weight="600">《思考，快与慢》</text>
+      <text x="16" y="254" fill="#8b949e" font-size="10">卡尼曼</text>
+      <!-- Progress bar -->
+      <rect x="16" y="264" width="268" height="6" rx="3" fill="#ffffff15"/>
+      <rect x="16" y="264" width="196" height="6" rx="3" fill="#22c55e"/>
+      <text x="16" y="282" fill="#22c55e" font-size="9" font-weight="700">73%</text>
+      <text x="284" y="282" text-anchor="end" fill="#8b949e" font-size="9">剩 27%</text>
+    </g>
+    <rect width="300" height="300" rx="22" fill="none" stroke="#ffffff18" stroke-width="1"/>
+  </g>
+  <text x="686" y="444" text-anchor="middle" fill="#6e7681" font-size="11">Large</text>
+
+  <!-- ═══════════════════════════════════════ SECTION 2: SEMANTIC SEARCH ═══════════════════════════════════════ -->
+  <text x="60" y="480" fill="#8b949e" font-size="11" letter-spacing="2" font-weight="600">02 · 语义搜索</text>
+
+  <g transform="translate(60, 494)" filter="url(#cardShadow)">
+    <rect width="340" height="270" rx="18" fill="#161b22"/>
+    <rect width="340" height="270" rx="18" fill="none" stroke="#ffffff12" stroke-width="1"/>
+
+    <!-- Search bar -->
+    <rect x="14" y="14" width="312" height="38" rx="10" fill="#21262d"/>
+    <text x="42" y="37" fill="#9d4edd" font-size="14">✦</text>
+    <text x="60" y="37" fill="#ffffff90" font-size="12">专注力 深度工作</text>
+    <rect x="294" y="24" width="22" height="18" rx="5" fill="#6c63ff"/>
+    <text x="305" y="36" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">搜</text>
+
+    <!-- Result rows -->
+    <!-- Result 1: high relevance -->
+    <rect x="14" y="64" width="312" height="56" rx="10" fill="#1c2128"/>
+    <text x="26" y="80" fill="#8b949e" font-size="9" font-weight="600">《深度工作》</text>
+    <rect x="270" y="68" width="42" height="18" rx="5" fill="#22c55e20"/>
+    <text x="291" y="80" text-anchor="middle" fill="#22c55e" font-size="9" font-weight="700">97%</text>
+    <text x="26" y="96" fill="#ffffffee" font-size="11">专注力是你最稀缺的资源，不可浪费</text>
+    <text x="26" y="112" fill="#9d4edd" font-size="9">✦ 直接讨论了专注力的核心价值</text>
+
+    <!-- Result 2: medium relevance -->
+    <rect x="14" y="128" width="312" height="52" rx="10" fill="#1c2128"/>
+    <text x="26" y="144" fill="#8b949e" font-size="9" font-weight="600">《心流》</text>
+    <rect x="270" y="132" width="42" height="18" rx="5" fill="#eab30820"/>
+    <text x="291" y="144" text-anchor="middle" fill="#eab308" font-size="9" font-weight="700">82%</text>
+    <text x="26" y="160" fill="#ffffffee" font-size="11">心流是全神贯注时的巅峰体验</text>
+    <text x="26" y="174" fill="#9d4edd" font-size="9">✦ 与专注力高度相关的状态描述</text>
+
+    <!-- Result 3 -->
+    <rect x="14" y="188" width="312" height="52" rx="10" fill="#1c2128"/>
+    <text x="26" y="204" fill="#8b949e" font-size="9" font-weight="600">《原子习惯》</text>
+    <rect x="270" y="192" width="42" height="18" rx="5" fill="#f9731620"/>
+    <text x="291" y="204" text-anchor="middle" fill="#f97316" font-size="9" font-weight="700">71%</text>
+    <text x="26" y="220" fill="#ffffffee" font-size="11">环境设计决定行为质量</text>
+    <text x="26" y="234" fill="#9d4edd" font-size="9">✦ 专注力的环境基础</text>
+
+    <!-- Index progress -->
+    <text x="14" y="258" fill="#8b949e" font-size="9">已索引 847 条划线 · 本地召回 → Claude 精排</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════ SECTION 3: KNOWLEDGE GRAPH ═══════════════════════════════════════ -->
+  <text x="420" y="480" fill="#8b949e" font-size="11" letter-spacing="2" font-weight="600">03 · 知识图谱</text>
+
+  <g transform="translate(420, 494)" filter="url(#cardShadow)">
+    <rect width="420" height="270" rx="18" fill="#0d1117"/>
+    <rect width="420" height="270" rx="18" fill="none" stroke="#ffffff12" stroke-width="1"/>
+
+    <!-- Graph edges (draw first, behind nodes) -->
+    <!-- Book nodes: positions A(90,140) B(220,80) C(330,140) D(220,210) -->
+    <!-- Concept nodes: E(160,168) F(280,168) G(210,120) H(155,100) I(310,100) -->
+
+    <!-- Edges between books and concepts -->
+    <line x1="90" y1="140" x2="160" y2="168" stroke="#6c63ff40" stroke-width="2"/>
+    <line x1="90" y1="140" x2="210" y2="120" stroke="#6c63ff35" stroke-width="1.5"/>
+    <line x1="220" y1="80" x2="210" y2="120" stroke="#22c55e45" stroke-width="2.5"/>
+    <line x1="220" y1="80" x2="155" y2="100" stroke="#22c55e40" stroke-width="2"/>
+    <line x1="330" y1="140" x2="280" y2="168" stroke="#f9731640" stroke-width="2"/>
+    <line x1="330" y1="140" x2="310" y2="100" stroke="#f9731635" stroke-width="1.5"/>
+    <line x1="220" y1="210" x2="160" y2="168" stroke="#ec489940" stroke-width="1.5"/>
+    <line x1="220" y1="210" x2="280" y2="168" stroke="#ec489940" stroke-width="1.5"/>
+    <!-- Book-book edges -->
+    <line x1="90" y1="140" x2="220" y2="80" stroke="#ffffff18" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <line x1="220" y1="80" x2="330" y2="140" stroke="#ffffff15" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <!-- Book nodes (larger circles) -->
+    <!-- Node A: 深度工作 (blue) -->
+    <circle cx="90" cy="140" r="30" fill="#6c63ff20"/>
+    <circle cx="90" cy="140" r="24" fill="#6c63ff" filter="url(#nodeGlow)"/>
+    <circle cx="90" cy="140" r="24" fill="none" stroke="#ffffff40" stroke-width="1.5"/>
+    <text x="90" y="137" text-anchor="middle" fill="#fff" font-size="8.5" font-weight="700">深度</text>
+    <text x="90" y="148" text-anchor="middle" fill="#fff" font-size="8.5" font-weight="700">工作</text>
+
+    <!-- Node B: 原子习惯 (green) -->
+    <circle cx="220" cy="80" r="30" fill="#22c55e20"/>
+    <circle cx="220" cy="80" r="24" fill="#22c55e" filter="url(#nodeGlow)"/>
+    <circle cx="220" cy="80" r="24" fill="none" stroke="#ffffff40" stroke-width="1.5"/>
+    <text x="220" y="77" text-anchor="middle" fill="#fff" font-size="8.5" font-weight="700">原子</text>
+    <text x="220" y="88" text-anchor="middle" fill="#fff" font-size="8.5" font-weight="700">习惯</text>
+
+    <!-- Node C: 穷查理宝典 (orange) -->
+    <circle cx="330" cy="140" r="30" fill="#f9731620"/>
+    <circle cx="330" cy="140" r="24" fill="#f97316" filter="url(#nodeGlow)"/>
+    <circle cx="330" cy="140" r="24" fill="none" stroke="#ffffff40" stroke-width="1.5"/>
+    <text x="330" y="137" text-anchor="middle" fill="#fff" font-size="8.5" font-weight="700">穷查理</text>
+    <text x="330" y="148" text-anchor="middle" fill="#fff" font-size="8.5" font-weight="700">宝典</text>
+
+    <!-- Node D: 心流 (pink) -->
+    <circle cx="220" cy="210" r="30" fill="#ec489920"/>
+    <circle cx="220" cy="210" r="24" fill="#ec4899" filter="url(#nodeGlow)"/>
+    <circle cx="220" cy="210" r="24" fill="none" stroke="#ffffff40" stroke-width="1.5"/>
+    <text x="220" y="214" text-anchor="middle" fill="#fff" font-size="8.5" font-weight="700">心流</text>
+
+    <!-- Concept nodes (smaller) -->
+    <!-- E: 专注力 (yellow) -->
+    <circle cx="160" cy="168" r="14" fill="#eab30830"/>
+    <circle cx="160" cy="168" r="11" fill="#eab308dd"/>
+    <text x="160" y="172" text-anchor="middle" fill="#000" font-size="8" font-weight="700">专注力</text>
+
+    <!-- F: 复利 -->
+    <circle cx="280" cy="168" r="14" fill="#06b6d430"/>
+    <circle cx="280" cy="168" r="11" fill="#06b6d4dd"/>
+    <text x="280" y="172" text-anchor="middle" fill="#000" font-size="8" font-weight="700">复利</text>
+
+    <!-- G: 习惯系统 -->
+    <circle cx="210" cy="128" r="14" fill="#a855f730"/>
+    <circle cx="210" cy="128" r="11" fill="#a855f7dd"/>
+    <text x="210" y="132" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="700">习惯</text>
+
+    <!-- H: 刻意练习 -->
+    <circle cx="155" cy="100" r="12" fill="#f4397330"/>
+    <circle cx="155" cy="100" r="9" fill="#f43973cc"/>
+    <text x="155" y="104" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">练习</text>
+
+    <!-- I: 思维模型 -->
+    <circle cx="310" cy="100" r="12" fill="#10b98130"/>
+    <circle cx="310" cy="100" r="9" fill="#10b981cc"/>
+    <text x="310" y="104" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">模型</text>
+
+    <!-- Legend / info bar -->
+    <rect x="14" y="244" width="392" height="20" rx="5" fill="#ffffff08"/>
+    <circle cx="28" cy="254" r="5" fill="#6c63ff"/>
+    <text x="40" y="258" fill="#8b949e" font-size="9">书籍节点</text>
+    <circle cx="90" cy="254" r="4" fill="#eab308"/>
+    <text x="102" y="258" fill="#8b949e" font-size="9">概念节点</text>
+    <line x1="155" y1="254" x2="175" y2="254" stroke="#ffffff40" stroke-width="1.5" stroke-dasharray="3,2"/>
+    <text x="182" y="258" fill="#8b949e" font-size="9">书籍关联</text>
+    <text x="260" y="258" fill="#8b949e" font-size="9">力导向布局 · 60fps</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════ SECTION 4: DAILY BRIEF ═══════════════════════════════════════ -->
+  <text x="60" y="784" fill="#8b949e" font-size="11" letter-spacing="2" font-weight="600">04 · 每日简报</text>
+
+  <g transform="translate(60, 798)" filter="url(#cardShadow)">
+    <rect width="456" height="88" rx="16" fill="url(#briefGrad)"/>
+    <rect width="456" height="88" rx="16" fill="none" stroke="#f9731640" stroke-width="1.5"/>
+    <!-- Today badge -->
+    <rect x="16" y="12" width="42" height="18" rx="6" fill="#f97316"/>
+    <text x="37" y="24" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">今日</text>
+    <text x="70" y="24" fill="#ffffff" font-size="12" font-weight="700">2月18日 星期三</text>
+    <text x="400" y="24" fill="#8b949e" font-size="10">⏱ 42分钟</text>
+    <!-- Content -->
+    <text x="16" y="44" fill="#8b949e" font-size="9" font-weight="700">📖 昨日回顾</text>
+    <text x="16" y="58" fill="#ffffffcc" font-size="11">昨天读了 42 分钟，深度工作的章节让人印象深刻。</text>
+    <!-- Gold highlight -->
+    <rect x="16" y="66" width="424" height="16" rx="4" fill="#eab30812"/>
+    <text x="26" y="77" fill="#eab308" font-size="9">✦  精选：「专注力是最稀缺的资源。」— 《深度工作》</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════ SECTION 5: SIRI INTENTS ═══════════════════════════════════════ -->
+  <text x="536" y="784" fill="#8b949e" font-size="11" letter-spacing="2" font-weight="600">05 · Siri 快捷指令</text>
+
+  <g transform="translate(536, 798)" filter="url(#cardShadow)">
+    <rect width="604" height="88" rx="16" fill="#1c2128"/>
+    <rect width="604" height="88" rx="16" fill="none" stroke="#ffffff12" stroke-width="1"/>
+
+    <!-- Siri bubble 1 -->
+    <rect x="14" y="12" width="180" height="30" rx="10" fill="#1d4ed820"/>
+    <rect x="14" y="12" width="180" height="30" rx="10" fill="none" stroke="#3b82f640" stroke-width="1"/>
+    <text x="24" y="31" fill="#93c5fd" font-size="10">🎤 我今天读了多久书？</text>
+
+    <!-- Siri bubble 2 -->
+    <rect x="206" y="12" width="160" height="30" rx="10" fill="#7c3aed20"/>
+    <rect x="206" y="12" width="160" height="30" rx="10" fill="none" stroke="#8b5cf640" stroke-width="1"/>
+    <text x="216" y="31" fill="#c4b5fd" font-size="10">🎤 给我一条随机划线</text>
+
+    <!-- Siri bubble 3 -->
+    <rect x="378" y="12" width="212" height="30" rx="10" fill="#065f4620"/>
+    <rect x="378" y="12" width="212" height="30" rx="10" fill="none" stroke="#10b98140" stroke-width="1"/>
+    <text x="388" y="31" fill="#6ee7b7" font-size="10">🎤 搜索关于"专注力"的划线</text>
+
+    <!-- Response row -->
+    <rect x="14" y="52" width="230" height="26" rx="8" fill="#ffffff0a"/>
+    <text x="24" y="69" fill="#ffffff90" font-size="10">📚 今日 42分钟 · 🔥 连续7天</text>
+
+    <rect x="256" y="52" width="200" height="26" rx="8" fill="#ffffff0a"/>
+    <text x="266" y="69" fill="#ffffff90" font-size="10">「专注力是最稀缺的资源」</text>
+
+    <rect x="468" y="52" width="122" height="26" rx="8" fill="#ffffff0a"/>
+    <text x="478" y="69" fill="#ffffff90" font-size="10">找到 3 条划线 ↗</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════ TECH STACK PILLS ═══════════════════════════════════════ -->
+  <g transform="translate(60, 894)">
+    <rect x="0" y="-18" width="78" height="18" rx="9" fill="#6c63ff20"/>
+    <text x="39" y="-5" text-anchor="middle" fill="#a78bfa" font-size="9" font-weight="600">WidgetKit</text>
+
+    <rect x="86" y="-18" width="100" height="18" rx="9" fill="#22c55e20"/>
+    <text x="136" y="-5" text-anchor="middle" fill="#86efac" font-size="9" font-weight="600">NLEmbedding</text>
+
+    <rect x="194" y="-18" width="96" height="18" rx="9" fill="#f9731620"/>
+    <text x="242" y="-5" text-anchor="middle" fill="#fdba74" font-size="9" font-weight="600">SwiftUI Canvas</text>
+
+    <rect x="298" y="-18" width="108" height="18" rx="9" fill="#06b6d420"/>
+    <text x="352" y="-5" text-anchor="middle" fill="#67e8f9" font-size="9" font-weight="600">BGAppRefreshTask</text>
+
+    <rect x="414" y="-18" width="84" height="18" rx="9" fill="#ec489920"/>
+    <text x="456" y="-5" text-anchor="middle" fill="#f9a8d4" font-size="9" font-weight="600">App Intents</text>
+
+    <rect x="506" y="-18" width="102" height="18" rx="9" fill="#eab30820"/>
+    <text x="557" y="-5" text-anchor="middle" fill="#fde68a" font-size="9" font-weight="600">Claude Haiku 4.5</text>
+  </g>
+</svg>
