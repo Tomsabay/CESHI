@@ -19,6 +19,9 @@ struct WeReadDashboardView: View {
 
     @State private var showAnalysisSheet = false
     @State private var showLoginSheet = false
+    @State private var showSearchSheet = false
+    @State private var showKnowledgeGraph = false
+    @State private var showDailyBrief = false
     @State private var selectedTab: DashboardTab = .shelf
 
     enum DashboardTab: String, CaseIterable {
@@ -73,6 +76,28 @@ struct WeReadDashboardView: View {
             .navigationTitle("微信读书")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    HStack(spacing: 14) {
+                        // 语义搜索
+                        Button {
+                            showSearchSheet = true
+                        } label: {
+                            Image(systemName: "sparkle.magnifyingglass")
+                        }
+                        // 知识图谱
+                        Button {
+                            showKnowledgeGraph = true
+                        } label: {
+                            Image(systemName: "circle.hexagongrid.fill")
+                        }
+                        // 每日简报
+                        Button {
+                            showDailyBrief = true
+                        } label: {
+                            Image(systemName: "sun.horizon.fill")
+                        }
+                    }
+                }
                 ToolbarItem(placement: .primaryAction) {
                     Menu {
                         Button("刷新数据", systemImage: "arrow.clockwise") { loadData() }
@@ -84,6 +109,22 @@ struct WeReadDashboardView: View {
                         Image(systemName: "ellipsis.circle")
                     }
                 }
+            }
+            .sheet(isPresented: $showSearchSheet) {
+                WeReadSemanticSearchView(books: books)
+            }
+            .navigationDestination(isPresented: $showKnowledgeGraph) {
+                if let summary = summary {
+                    KnowledgeGraphView(userData: WeReadUserData(
+                        books: books,
+                        highlights: recentHighlights,
+                        notes: [],
+                        summary: summary
+                    ))
+                }
+            }
+            .navigationDestination(isPresented: $showDailyBrief) {
+                WeReadDailyBriefView()
             }
             .overlay {
                 if isLoading {
